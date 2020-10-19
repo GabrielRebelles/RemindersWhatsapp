@@ -15,7 +15,7 @@ class Login extends React.Component{
     }
 
     login(event){
-		fetch('/api/login',{
+		fetch(location.href+'api/login',{
 			method: 'POST',         
 			body:JSON.stringify(this.state),
 			headers: {
@@ -44,7 +44,7 @@ class Login extends React.Component{
 
 
     register(event){
-		fetch('/api/register',{
+		fetch(location.href+'api/register',{
 			method: 'POST',         
 			body:JSON.stringify(this.state),
 			headers: {

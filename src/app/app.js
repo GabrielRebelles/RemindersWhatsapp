@@ -38,13 +38,13 @@ class App extends React.Component {
 
         if(time>=moment().valueOf()){        
             if (this.state._id) {
-                url=`/api/${this.state._id}`
+                url=`api/${this.state._id}`
                 method = "PUT"
             }else{
-                url=`/api`
+                url=`api`
                 method = "POST"
             }	
-            fetch(url,{     //esto envia un post al srv:
+            fetch(location.href+url,{     //esto envia un post al srv:
                 method: method,         
                 body: JSON.stringify({phone,time,description}),
                 headers:{
@@ -68,7 +68,7 @@ class App extends React.Component {
     }
 
     fetchTask(){
-        fetch('/api',{
+        fetch(location.href+'api',{
             method:"GET",
             headers:{
                 Accept: "application/json",
@@ -84,7 +84,7 @@ class App extends React.Component {
 
     deleteTask(id){
         if(confirm('Esta seguro de eliminar el recordatorio?')){
-            fetch(`/api/${id}`,{
+            fetch(location.href+`api/${id}`,{
             method: 'DELETE',         
             body: JSON.stringify(this.state), 
             headers:{
@@ -103,7 +103,7 @@ class App extends React.Component {
     }
 
     editTask(id){
-        fetch(`/api/${id}`,{
+        fetch(location.href+`api/${id}`,{
             method:"GET",
             headers:{
                 Accept: "application/json",
@@ -132,7 +132,7 @@ class App extends React.Component {
 
     jwtValidate(){
         if(localStorage.getItem("JWT-TASKS")){
-			fetch(`/api/validatelogin`, {
+			fetch(location.href+`api/validatelogin`, {
 				method: "POST",
 				headers: {
 					Accept: "application/json",
