@@ -141,7 +141,7 @@ class App extends React.Component {
 				}
 			})
 			.then((res) => {
-                if(res.status===401)localStorage.clear();
+                if(res.status===401)localStorage.removeItem("JWT-TASKS");
                 return res.json()
             })
             .then((res)=>{this.setState({username:res.username})})
@@ -149,7 +149,7 @@ class App extends React.Component {
     }
 
     logout(){
-        localStorage.clear()
+        localStorage.removeItem("JWT-TASKS")
         this.forceUpdate()
 	}
 	

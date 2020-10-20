@@ -3,7 +3,7 @@ const jwtSecreto=process.env.SecretJWT
 
 function sign(data){
     //creo la session:
-    return jwt.sign(data,jwtSecreto,{ expiresIn: 1800 })
+    return jwt.sign(data,jwtSecreto,{ expiresIn: 604800 })
 }
 
 async function logeado(req){//si hay algun error se interrumpe la ejecucion de la func
