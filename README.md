@@ -60,4 +60,4 @@ Then create the following environment variables
 ![](docs/SS1.png)
 ![](docs/SS2.png)
 ##### WhatsApp
-![](docs/Whatsapp.png)
+![](docs/Whatsapp.png =400x)
